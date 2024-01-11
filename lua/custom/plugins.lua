@@ -7,6 +7,7 @@ local plugins = {
     "JesperLundberg/projektgunnar.nvim",
     dependencies = {
       "echasnovski/mini.pick",
+      "echasnovski/mini.notify",
     },
     event = "VeryLazy",
   },
