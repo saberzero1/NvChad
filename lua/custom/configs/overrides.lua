@@ -12,6 +12,11 @@ M.treesitter = {
     "c",
     "markdown",
     "markdown_inline",
+    "sql",
+    "go",
+    "dotnet",
+    "python",
+    "json",
   },
   indent = {
     enable = true,
@@ -21,6 +26,8 @@ M.treesitter = {
   },
 }
 
+
+-- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
 M.mason = {
   ensure_installed = {
     -- lua stuff
@@ -37,6 +44,21 @@ M.mason = {
     -- c/cpp stuff
     "clangd",
     "clang-format",
+
+    -- sql stuff
+    "sqls",
+
+    -- go stuff
+    "gopls",
+
+    -- csharp stuff
+    "csharp-ls",
+
+    -- python stuff
+    "anakinls",
+
+    -- json stuff
+    "jsonls",
   },
 }
 
