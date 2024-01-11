@@ -2,6 +2,14 @@ local overrides = require("custom.configs.overrides")
 
 ---@type NvPluginSpec[]
 local plugins = {
+  {
+    -- Handle dotnet packages and references
+    "JesperLundberg/projektgunnar.nvim",
+    dependencies = {
+      "echasnovski/mini.pick",
+    },
+    event = "VeryLazy",
+  },
 
   -- Override plugin definition options
 
@@ -27,6 +35,7 @@ local plugins = {
   {
     "nvim-tree/nvim-tree.lua",
     opts = overrides.nvimtree,
+    enabled = false,
   },
 
   -- Install a plugin
@@ -45,6 +54,66 @@ local plugins = {
     config = function()
       require "custom.configs.conform"
     end,
+  },
+
+  {
+    -- Show all todo comments in solution
+    "folke/todo-comments.nvim",
+    requires = "nvim-lua/plenary.nvim",
+    config = function()
+      require("todo-comments").setup {}
+    end,
+    event = "VeryLazy",
+  },
+
+  {
+    -- File manager
+    "echasnovski/mini.files",
+    version = false,
+    config = function()
+      require("core.utils").load_mappings "minifiles"
+      require("mini.files").setup {
+        mappings = {
+          go_in_plus = "<Right>",
+          go_out_plus = "<Left>",
+          synchronize = "<C-s>",
+        },
+      }
+    end,
+    event = "VeryLazy",
+  },
+
+  {
+    -- Move lines and blocks of code
+    "echasnovski/mini.move",
+    version = false,
+    config = function()
+      require("mini.move").setup {
+        options = {
+          reindent_linewise = true,
+        },
+      }
+    end,
+    event = "VeryLazy",
+  },
+
+  {
+    -- Highlight the word under the cursor
+    "echasnovski/mini.cursorword",
+    version = false,
+    config = function()
+      require("mini.cursorword").setup {}
+    end,
+    event = "BufRead",
+  },
+
+  {
+    "echasnovski/mini.ai",
+    version = false,
+    config = function()
+      require("mini.ai").setup {}
+    end,
+    event = "BufRead",
   },
 
   -- To make a plugin not be loaded
