@@ -9,6 +9,8 @@ local options = {
 		html = { "prettier" },
 
 		sh = { "shfmt" },
+
+		c_sharp = { "csharpier" },
 	},
 
   -- adding same formatter for multiple filetypes can look too much work for some
