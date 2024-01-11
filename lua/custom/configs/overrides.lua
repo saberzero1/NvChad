@@ -15,6 +15,7 @@ M.treesitter = {
     "sql",
     "go",
     "dotnet",
+    "c_sharp",
     "python",
     "json",
   },
@@ -52,13 +53,15 @@ M.mason = {
     "gopls",
 
     -- csharp stuff
-    "csharp-ls",
+    "omnisharp",
+		"csharpier",
 
     -- python stuff
-    "anakinls",
+    "pyflakes",
+    "pycodestyle",
 
     -- json stuff
-    "jsonls",
+    -- "jsonls",
   },
 }
 
@@ -75,6 +78,14 @@ M.nvimtree = {
         git = true,
       },
     },
+  },
+
+  sort = {
+    sorter = "case_sensitive",
+  },
+
+  view = {
+    width = 60,
   },
 }
 
