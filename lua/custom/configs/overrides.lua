@@ -15,7 +15,7 @@ M.treesitter = {
     "markdown_inline",
     "sql",
     "go",
-    "dotnet",
+    -- "dotnet",
     "c_sharp",
     "python",
     "json",
