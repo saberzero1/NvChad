@@ -1,3 +1,5 @@
+vim.api.nvim_exec ('language en_US', true)
+
 if vim.g.vscode then
   require "vscode"
 else

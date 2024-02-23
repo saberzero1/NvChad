@@ -6,4 +6,4 @@ g.mapleader = " "
 
 vim.notify = vscode.notify
 
-vscode.notify("Neovim config loaded successfully!")
+vim.notify("Neovim config loaded successfully!")
