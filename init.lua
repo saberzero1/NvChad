@@ -1,4 +1,9 @@
-vim.api.nvim_exec ('language en_US', true)
+if vim.g.os ~= nil then
+    if vim.fn.has("win64") or vim.fn.has("win32") or vim.fn.has("win16") then
+        vim.api.nvim_exec ('language en_US', true)
+    end
+end
+
 
 if vim.g.vscode then
   require "vscode"
